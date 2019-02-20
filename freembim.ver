@@ -1,0 +1,6 @@
+{
+	global:
+		freembim_*;
+	local:
+		*;
+};
