@@ -251,7 +251,7 @@ int udev_process_idle(thread_params_t *tp) {
 		queue_elem_t *q = m->interfaces->head;
 		while(q) {
 			interface_t *i = q->elem;
-			if(strcmp(m->vendor,"1e2d")==0 && strcmp(m->model,"0065")==0) {
+			if(strcmp(m->vendor,"1e2d")==0 && (strcmp(m->model,"0065")==0 || strcmp(m->model,"005d")==0)) {
 				if(strcmp(i->subsystem,"tty")==0) {
 					if(strcmp(i->number,"00")==0) {
 					//if(strcmp(i->number,"02")==0) {
