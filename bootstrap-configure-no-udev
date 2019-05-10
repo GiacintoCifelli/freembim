@@ -7,7 +7,7 @@ fi
 ./bootstrap && \
     ./configure --enable-maintainer-mode \
 		--enable-debug \
-		--enable-udev \
+		--disable-udev \
 		--prefix=/usr \
 		--mandir=/usr/share/man \
 		--sysconfdir=/etc \

@@ -5,7 +5,8 @@ noinst_LTLIBRARIES =
 
 sbin_PROGRAMS = freembim
 
-freembim_SOURCES = \
+sources =
+sources += \
 	at_lib.c \
 	at_lib.h \
 	at_procs.c \
@@ -26,9 +27,16 @@ freembim_SOURCES = \
 	thread_mbim.h \
 	thread_tty.c \
 	thread_tty.h \
-	thread_udev.c \
 	thread_udev.h \
 	freembim.ver
+
+if UDEV
+sources += thread_udev.c
+else
+sources += thread_noudev.c
+endif
+
+freembim_SOURCES = $(sources)
 
 if MAINTAINER_MODE
 build_plugindir = $(abs_top_srcdir)/plugins/.libs
